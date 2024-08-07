@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    static int n;
+    static int a;
+    static int[] score = new int[100];
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            score[i] = sc.nextInt();
+        }
+
+        a = max(score, n);
+        System.out.println(a);
+        float[] mul = new float[n];
+        for (int i = 0; i < n; i++) {
+            mul[i] = (float) score[i] / a * 100;
+        }
+        float answer = 0;
+        for (int i = 0; i < n; i++) {
+            answer += mul[i];
+        }
+        float result;
+        result = answer / n;
+        System.out.println(result);
+    }
+
+    public static int max(int[] arr, int n) {
+        int maxValue = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i];
+            }
+        }
+        return maxValue;
+    }
+}
