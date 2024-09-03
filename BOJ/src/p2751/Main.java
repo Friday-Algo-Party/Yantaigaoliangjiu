@@ -14,11 +14,9 @@ public class Main {
             lineup[i]=Integer.parseInt(br.readLine());
         }
         Arrays.sort(lineup);
-        System.out.println(lineup[0]);
-        for(int i=1;i<n;i++){
-            if(lineup[i]!=lineup[i-1]){
+        for(int i=0;i<n;i++){
                 System.out.println(lineup[i]);
-            }
         }
+
     }
 }
