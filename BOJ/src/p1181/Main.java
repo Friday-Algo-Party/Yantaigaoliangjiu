@@ -13,22 +13,23 @@ public class Main {
         int n=Integer.parseInt(br.readLine());
         String[] word=new String[n];
         for(int i=0;i<n;i++){
-            word[i]=br.readLine();
+            word[i]=br.readLine();                              // 문자열 입력받아서 word 배열에 저장
         }
-        Arrays.sort(word, new Comparator<String>(){
+        Arrays.sort(word, new Comparator<String>(){             // 배열을 오름차순으로 정렬
             @Override
             public int compare(String o1, String o2) {
                 if(o1.length()<o2.length()) return -1;
                 if(o1.length()>o2.length()) return 1;
-                return o1.compareTo(o2);
+                return o1.compareTo(o2);                        // 문자열의 길이 비교
             }
         });
         System.out.println(word[0]);
         for(int i=1;i<n;i++){
-            if(word[i]==word[i-1]){
-                break;
+            boolean a=word[i].equals(word[i-1]);
+            if(a){
+                continue;
             }else{
-                System.out.println(word[i]);
+                System.out.println(word[i]);                    // 중복된 문자열의 경우 삭제, 그렇지 않으면 출력
             }
         }
     }
