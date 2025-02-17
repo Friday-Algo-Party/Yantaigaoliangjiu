@@ -9,8 +9,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         int n=Integer.parseInt(br.readLine());
-        int[]set=new int[101];
-        set[0]=0;
+        long[]set=new long[101];
         set[1]=1;
         set[2]=1;
         set[3]=1;
@@ -20,7 +19,7 @@ public class Main {
             set[i]=set[i-1]+set[i-5];
         }
         for(int i=0;i<n;i++){
-            sb.append(set[Integer.parseInt(br.readLine())]).append("\n");
+            sb.append(set[Integer.parseInt(br.readLine())-1]).append("\n");
         }
         System.out.println(sb);
     }
