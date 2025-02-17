@@ -32,8 +32,10 @@ public class Fail {
             }
         }
         Arrays.sort(res);
-        for(int i=0;i<cnt;i++){
-            sb.append(res[i]).append("\n");
+        for(int i=0;i<n;i++){
+            if(res[i]!=null){
+                sb.append(res[i]).append("\n");
+            }
         }
         System.out.println(cnt);
         System.out.println(sb);
